@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:TKT-{event.event_name}-{####}",
+ "autoname": "format:TKT-{event_name}-{ticket_category_name}-{####}",
  "creation": "2026-01-28 12:20:49.465904",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,6 +9,8 @@
   "event",
   "ticket_category",
   "ticket_price",
+  "event_name",
+  "ticket_category_name",
   "column_break_fryv",
   "sales_start",
   "sales_end",
@@ -85,12 +87,26 @@
    "label": "Included Merchandise",
    "mandatory_depends_on": "eval:doc.includes_merchandise === true",
    "options": "Ticket Included Merchandise"
+  },
+  {
+   "fetch_from": "event.event_name",
+   "fieldname": "event_name",
+   "fieldtype": "Data",
+   "label": "Event Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ticket_category.ticket_category",
+   "fieldname": "ticket_category_name",
+   "fieldtype": "Data",
+   "label": "Ticket Category Name",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-28 14:06:42.617875",
+ "modified": "2026-01-28 22:39:53.438014",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Ticket Type",

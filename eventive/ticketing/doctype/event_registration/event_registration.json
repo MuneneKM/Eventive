@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:REG-{#####}",
  "creation": "2026-01-28 12:44:54.393863",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -48,7 +49,8 @@
    "fieldname": "payment_status",
    "fieldtype": "Select",
    "label": "Payment Status",
-   "options": "Unpaid\nPaid\nRefunded"
+   "options": "Unpaid\nPaid\nRefunded",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_sntr",
@@ -63,16 +65,18 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Pending\nConfirmed\nCanceled"
+   "options": "Pending\nConfirmed\nCanceled",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-28 16:30:15.080652",
+ "modified": "2026-01-28 22:41:30.287149",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Event Registration",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
