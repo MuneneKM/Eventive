@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: SES-{DD}-{####}",
+ "creation": "2026-01-28 12:01:36.792523",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event",
+  "title",
+  "session_type",
+  "speaker",
+  "column_break_rylj",
+  "start_time",
+  "end_time",
+  "capacity",
+  "section_break_zvnb",
+  "is_recorded",
+  "allow_booking"
+ ],
+ "fields": [
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "Main Event",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "default": "Talk",
+   "fieldname": "session_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Session Type",
+   "options": "Talk\nWorkshop\nPanel",
+   "reqd": 1
+  },
+  {
+   "description": "Rem to change to Link field",
+   "fieldname": "speaker",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Speaker",
+   "options": "Speaker",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Datetime",
+   "label": "Start Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "label": "End Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "label": "Capacity"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_recorded",
+   "fieldtype": "Check",
+   "label": "Is Recorded?"
+  },
+  {
+   "default": "0",
+   "description": "Help us manage capacity",
+   "fieldname": "allow_booking",
+   "fieldtype": "Check",
+   "label": "Allow Booking?"
+  },
+  {
+   "fieldname": "column_break_rylj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zvnb",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-28 16:11:13.025419",
+ "modified_by": "Administrator",
+ "module": "Eventive",
+ "name": "Event Session",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-28 14:07:29.243057",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "check_in_status_column",
+  "registration",
+  "event",
+  "qr_code",
+  "column_break_cahn",
+  "ticket_type",
+  "attendee_name",
+  "checked_in",
+  "checked_in_by",
+  "section_break_jvdz",
+  "merchandise"
+ ],
+ "fields": [
+  {
+   "fieldname": "registration",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Registration",
+   "options": "Event Registration",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "registration.event",
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "Main Event",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "check_in_status_column",
+   "fieldtype": "Column Break",
+   "label": "Check In Status",
+   "options": "Day One\nDay two"
+  },
+  {
+   "description": "backend",
+   "fieldname": "qr_code",
+   "fieldtype": "Attach Image",
+   "label": "QR Code"
+  },
+  {
+   "fieldname": "column_break_cahn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Populate from backend",
+   "fieldname": "ticket_type",
+   "fieldtype": "Link",
+   "label": "Ticket Type",
+   "options": "Ticket Type"
+  },
+  {
+   "description": "populate from the script",
+   "fieldname": "attendee_name",
+   "fieldtype": "Data",
+   "label": "Attendee Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "checked_in",
+   "fieldtype": "Check",
+   "label": "Checked In"
+  },
+  {
+   "fieldname": "section_break_jvdz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "merchandise",
+   "fieldtype": "Table",
+   "label": "Merchandise",
+   "options": "Event Attendee Ticket Merchandise"
+  },
+  {
+   "fieldname": "checked_in_by",
+   "fieldtype": "Link",
+   "label": "Checked In By",
+   "options": "User"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-28 16:31:02.691924",
+ "modified_by": "Administrator",
+ "module": "Ticketing",
+ "name": "Event Ticket",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
