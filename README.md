@@ -1,0 +1,2 @@
+# Eventive
+Event Management Platform
