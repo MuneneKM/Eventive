@@ -5,19 +5,20 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "table_hdtu"
+  "items"
  ],
  "fields": [
   {
-   "fieldname": "table_hdtu",
+   "fieldname": "items",
    "fieldtype": "Table",
+   "label": "Items",
    "options": "Event Ticket Merchandise"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-28 23:22:12.232578",
+ "modified": "2026-01-29 22:17:17.479255",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Event Attendee Ticket Merchandise",

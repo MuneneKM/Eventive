@@ -9,11 +9,12 @@
   "event",
   "email",
   "column_break_sntr",
-  "ticket_type",
   "payment_status",
   "status",
   "section_break_zrgw",
-  "attendees"
+  "attendees",
+  "section_break_jfgs",
+  "total_amount"
  ],
  "fields": [
   {
@@ -39,18 +40,10 @@
    "reqd": 1
   },
   {
-   "fieldname": "ticket_type",
-   "fieldtype": "Link",
-   "label": "Ticket Type",
-   "options": "Ticket Type",
-   "reqd": 1
-  },
-  {
    "fieldname": "payment_status",
    "fieldtype": "Select",
    "label": "Payment Status",
-   "options": "Unpaid\nPaid\nRefunded",
-   "read_only": 1
+   "options": "Unpaid\nPaid\nRefunded"
   },
   {
    "fieldname": "column_break_sntr",
@@ -65,14 +58,27 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Pending\nConfirmed\nCanceled",
-   "read_only": 1
+   "options": "Pending\nConfirmed\nCanceled"
+  },
+  {
+   "fieldname": "section_break_jfgs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2026-01-28 22:41:30.287149",
+ "links": [
+  {
+   "link_doctype": "Event Ticket",
+   "link_fieldname": "registration"
+  }
+ ],
+ "modified": "2026-01-29 23:18:02.763381",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Event Registration",

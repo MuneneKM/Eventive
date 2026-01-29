@@ -9,6 +9,7 @@
   "registration",
   "event",
   "qr_code",
+  "email",
   "column_break_cahn",
   "ticket_type",
   "attendee_name",
@@ -86,12 +87,18 @@
    "fieldtype": "Link",
    "label": "Checked In By",
    "options": "User"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
   }
  ],
  "grid_page_length": 50,
+ "image_field": "qr_code",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-28 23:20:54.975143",
+ "modified": "2026-01-29 23:04:05.444010",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Event Ticket",
