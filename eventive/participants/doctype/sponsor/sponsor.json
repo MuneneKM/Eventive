@@ -49,14 +49,15 @@
    "fieldtype": "Link",
    "label": "Event",
    "options": "Main Event",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "image_field": "company_logo",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-28 17:14:35.516024",
+ "modified": "2026-01-30 11:49:58.085841",
  "modified_by": "Administrator",
  "module": "Participants",
  "name": "Sponsor",

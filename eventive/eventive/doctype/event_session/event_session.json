@@ -6,17 +6,24 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "session_title",
   "event",
-  "title",
   "session_type",
-  "speaker",
+  "track",
   "column_break_rylj",
   "start_time",
   "end_time",
   "capacity",
+  "talk_name",
   "section_break_zvnb",
   "is_recorded",
-  "allow_booking"
+  "allow_booking",
+  "is_booked",
+  "booked_spots",
+  "section_break_bdbj",
+  "description",
+  "section_break_zcds",
+  "speakers"
  ],
  "fields": [
   {
@@ -25,31 +32,15 @@
    "in_list_view": 1,
    "label": "Event",
    "options": "Main Event",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Title",
-   "reqd": 1
-  },
-  {
-   "default": "Talk",
    "fieldname": "session_type",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Session Type",
    "options": "Talk\nWorkshop\nPanel",
-   "reqd": 1
-  },
-  {
-   "description": "Rem to change to Link field",
-   "fieldname": "speaker",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Speaker",
-   "options": "Speaker",
    "reqd": 1
   },
   {
@@ -89,12 +80,71 @@
   {
    "fieldname": "section_break_zvnb",
    "fieldtype": "Section Break"
+  },
+  {
+   "description": "Tracks which day the session is on",
+   "fieldname": "track",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Track",
+   "options": "Event Day Track",
+   "reqd": 1
+  },
+  {
+   "fieldname": "session_title",
+   "fieldtype": "Data",
+   "label": "Session Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_bdbj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fetch_from": "talk.title",
+   "fieldname": "talk_name",
+   "fieldtype": "Data",
+   "label": "Talk Name",
+   "mandatory_depends_on": "eval:doc.session_type===\"Talk\""
+  },
+  {
+   "default": "0",
+   "fieldname": "is_booked",
+   "fieldtype": "Check",
+   "label": "Is Booked?"
+  },
+  {
+   "fieldname": "booked_spots",
+   "fieldtype": "Int",
+   "label": "Booked Spots"
+  },
+  {
+   "fieldname": "section_break_zcds",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "speakers",
+   "fieldtype": "Table",
+   "label": "Speakers",
+   "mandatory_depends_on": "eval:doc.session_type===\"Talk\"",
+   "options": "Talk Speaker"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2026-01-28 16:11:13.025419",
+ "links": [
+  {
+   "group": "Bookings",
+   "link_doctype": "Booked Session Item",
+   "link_fieldname": "event_session"
+  }
+ ],
+ "modified": "2026-02-02 00:06:30.172360",
  "modified_by": "Administrator",
  "module": "Eventive",
  "name": "Event Session",
@@ -116,9 +166,7 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "title_field": "title"
+ "states": []
 }

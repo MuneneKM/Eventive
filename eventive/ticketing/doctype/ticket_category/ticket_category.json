@@ -8,6 +8,7 @@
  "field_order": [
   "ticket_name",
   "ticket_category",
+  "event",
   "column_break_zdvo",
   "ticket_price",
   "max_ticket_quantity",
@@ -57,12 +58,19 @@
    "fieldtype": "Link",
    "label": "Currency",
    "options": "Currency"
+  },
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "label": "Event",
+   "options": "Main Event",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-28 12:43:41.756558",
+ "modified": "2026-01-30 12:29:46.432701",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Ticket Category",

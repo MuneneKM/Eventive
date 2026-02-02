@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class SpeakerSession(Document):
+class SocialMediaLinks(Document):
 	pass

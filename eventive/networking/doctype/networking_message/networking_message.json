@@ -8,9 +8,10 @@
  "field_order": [
   "sender",
   "receiver",
+  "sender_name",
+  "receiver_name",
   "column_break_pcve",
-  "event",
-  "read",
+  "is_read",
   "section_break_pciq",
   "message"
  ],
@@ -36,20 +37,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "event",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Event",
-   "options": "Main Event",
-   "reqd": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "read",
-   "fieldtype": "Check",
-   "label": "Read?"
-  },
-  {
    "fieldname": "section_break_pciq",
    "fieldtype": "Section Break"
   },
@@ -57,12 +44,32 @@
    "fieldname": "message",
    "fieldtype": "Small Text",
    "label": "Message"
+  },
+  {
+   "fetch_from": "sender.full_name",
+   "fieldname": "sender_name",
+   "fieldtype": "Data",
+   "label": "Sender Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "receiver.full_name",
+   "fieldname": "receiver_name",
+   "fieldtype": "Data",
+   "label": "Receiver Name",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_read",
+   "fieldtype": "Check",
+   "label": "Is Read?"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-28 15:52:16.698444",
+ "modified": "2026-02-02 11:02:30.947930",
  "modified_by": "Administrator",
  "module": "Networking",
  "name": "Networking Message",

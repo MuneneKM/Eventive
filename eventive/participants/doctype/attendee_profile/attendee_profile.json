@@ -1,16 +1,23 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:ATT-{#####}",
  "creation": "2026-01-28 14:46:09.884333",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "user",
-  "event",
+  "full_name",
+  "profile_image",
   "column_break_cpmr",
   "role",
   "open_to_networking",
   "social_link",
+  "section_break_nclx",
+  "company",
+  "job_title",
+  "column_break_inln",
+  "bio",
   "section_break_trmc",
   "interests"
  ],
@@ -24,17 +31,11 @@
    "reqd": 1
   },
   {
-   "fieldname": "event",
-   "fieldtype": "Link",
-   "label": "Event",
-   "options": "Main Event",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_cpmr",
    "fieldtype": "Column Break"
   },
   {
+   "default": "Attendee",
    "fieldname": "role",
    "fieldtype": "Select",
    "label": "Role",
@@ -61,15 +62,49 @@
    "fieldname": "social_link",
    "fieldtype": "Data",
    "label": "Social Link"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "profile_image",
+   "fieldtype": "Attach Image",
+   "label": "Profile Image"
+  },
+  {
+   "fieldname": "section_break_nclx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "job_title",
+   "fieldtype": "Data",
+   "label": "Job Title"
+  },
+  {
+   "fieldname": "column_break_inln",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bio",
+   "fieldtype": "Small Text",
+   "label": "Bio"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-28 15:47:56.781505",
+ "modified": "2026-02-02 14:13:23.280802",
  "modified_by": "Administrator",
  "module": "Participants",
  "name": "Attendee Profile",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -81,6 +116,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Attendee",
    "share": 1,
    "write": 1
   }

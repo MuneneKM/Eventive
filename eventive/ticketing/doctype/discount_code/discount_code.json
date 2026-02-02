@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:DISC-{#####}",
+ "creation": "2026-01-31 00:25:56.622262",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "discount_name",
+  "code",
+  "event",
+  "discount_value",
+  "column_break_mezh",
+  "valid_from",
+  "valid_unit",
+  "max_uses",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "description": "Should be unique",
+   "fieldname": "code",
+   "fieldtype": "Data",
+   "label": "Code"
+  },
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "Main Event",
+   "reqd": 1
+  },
+  {
+   "fieldname": "discount_value",
+   "fieldtype": "Currency",
+   "label": "Discount value",
+   "mandatory_depends_on": "eval:doc.discount_type===\"Fixed\""
+  },
+  {
+   "fieldname": "column_break_mezh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Datetime",
+   "label": "Valid From"
+  },
+  {
+   "fieldname": "valid_unit",
+   "fieldtype": "Datetime",
+   "label": "Valid Unit"
+  },
+  {
+   "fieldname": "max_uses",
+   "fieldtype": "Int",
+   "label": "Max Uses"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active?"
+  },
+  {
+   "fieldname": "discount_name",
+   "fieldtype": "Data",
+   "label": "Discount Name",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-31 00:47:29.352222",
+ "modified_by": "Administrator",
+ "module": "Ticketing",
+ "name": "Discount Code",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "discount_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "discount_name"
+}

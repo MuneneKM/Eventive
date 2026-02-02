@@ -11,10 +11,12 @@
   "column_break_sntr",
   "payment_status",
   "status",
+  "discount_code",
   "section_break_zrgw",
   "attendees",
   "section_break_jfgs",
-  "total_amount"
+  "total_amount",
+  "discount_amount"
  ],
  "fields": [
   {
@@ -68,6 +70,19 @@
    "fieldname": "total_amount",
    "fieldtype": "Currency",
    "label": "Total Amount"
+  },
+  {
+   "fieldname": "discount_code",
+   "fieldtype": "Link",
+   "label": "Discount Code ",
+   "options": "Discount Code"
+  },
+  {
+   "fetch_from": "discount_code.discount_value",
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -78,7 +93,7 @@
    "link_fieldname": "registration"
   }
  ],
- "modified": "2026-01-29 23:18:02.763381",
+ "modified": "2026-01-31 00:47:04.047349",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Event Registration",

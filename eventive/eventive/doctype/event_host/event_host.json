@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:HOST-{####}",
+ "creation": "2026-01-30 19:08:37.093688",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "host_name",
+  "logo",
+  "column_break_eswi",
+  "by_line",
+  "section_break_vefn",
+  "about"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "host_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Host Name",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo"
+  },
+  {
+   "fieldname": "column_break_eswi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "by_line",
+   "fieldtype": "Small Text",
+   "label": "By Line"
+  },
+  {
+   "fieldname": "section_break_vefn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "about",
+   "fieldtype": "Text Editor",
+   "label": "About"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "logo",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-30 19:17:50.535872",
+ "modified_by": "Administrator",
+ "module": "Eventive",
+ "name": "Event Host",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "host_name"
+}

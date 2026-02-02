@@ -9,11 +9,16 @@
   "title",
   "event",
   "session",
+  "thumbnail",
   "column_break_tstl",
   "content_type",
   "file",
   "publish_date",
-  "access_level"
+  "access_level",
+  "section_break_nbdh",
+  "content_tags",
+  "section_break_txno",
+  "description"
  ],
  "fields": [
   {
@@ -65,12 +70,37 @@
    "label": "Access Level",
    "options": "All\nViP",
    "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_txno",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_nbdh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "content_tags",
+   "fieldtype": "Table",
+   "label": "Content Tags",
+   "options": "Content Tag"
+  },
+  {
+   "fieldname": "thumbnail",
+   "fieldtype": "Attach Image",
+   "label": "Thumbnail"
   }
  ],
  "grid_page_length": 50,
+ "image_field": "thumbnail",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-28 15:27:20.499952",
+ "modified": "2026-02-02 00:19:24.987193",
  "modified_by": "Administrator",
  "module": "Eventive",
  "name": "Digital Content",

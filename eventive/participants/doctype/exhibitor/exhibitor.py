@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class TicketIncludedMerchandise(Document):
+class Exhibitor(Document):
 	pass

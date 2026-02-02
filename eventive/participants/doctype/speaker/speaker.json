@@ -1,14 +1,23 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:SPK-{#####}",
  "creation": "2026-01-28 14:56:48.831144",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "full_name",
-  "bio",
   "photo",
-  "sessions"
+  "column_break_sqmb",
+  "bio",
+  "section_break_stok",
+  "role",
+  "column_break_iefd",
+  "company",
+  "section_break_jjdw",
+  "sessions",
+  "section_break_havq",
+  "social_links"
  ],
  "fields": [
   {
@@ -31,17 +40,56 @@
   {
    "description": "put a child table populated by session doctype",
    "fieldname": "sessions",
+   "fieldtype": "Table",
+   "label": "Sessions",
+   "options": "Speaker Sessions"
+  },
+  {
+   "fieldname": "column_break_sqmb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_jjdw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_havq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "social_links",
+   "fieldtype": "Table",
+   "label": "Social links",
+   "options": "Social Media Links"
+  },
+  {
+   "fieldname": "section_break_stok",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "role",
    "fieldtype": "Data",
-   "label": "Sessions"
+   "label": "Role"
+  },
+  {
+   "fieldname": "column_break_iefd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
   }
  ],
  "grid_page_length": 50,
+ "image_field": "photo",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-28 15:11:15.451535",
+ "modified": "2026-02-01 11:54:46.556374",
  "modified_by": "Administrator",
  "module": "Participants",
  "name": "Speaker",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -59,7 +107,10 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "search_fields": "full_name",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "full_name"
 }

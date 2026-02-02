@@ -15,6 +15,8 @@
   "attendee_name",
   "checked_in",
   "checked_in_by",
+  "status",
+  "issue_date",
   "section_break_jvdz",
   "merchandise"
  ],
@@ -92,13 +94,26 @@
    "fieldname": "email",
    "fieldtype": "Data",
    "label": "Email"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Valid\nInvalid"
+  },
+  {
+   "default": "Today",
+   "fieldname": "issue_date",
+   "fieldtype": "Datetime",
+   "label": "Issue Date",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "image_field": "qr_code",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-29 23:04:05.444010",
+ "modified": "2026-02-01 14:42:58.946614",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Event Ticket",
