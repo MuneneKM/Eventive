@@ -17,8 +17,10 @@
   "event_name",
   "section_break_qqog",
   "booth_package",
+  "is_approved",
   "section_break_mhxn",
-  "notes"
+  "notes",
+  "amended_from"
  ],
  "fields": [
   {
@@ -98,11 +100,29 @@
    "label": "Booth Package",
    "options": "Booth Package",
    "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Exhibitor",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_approved",
+   "fieldtype": "Check",
+   "label": "Is Approved?",
+   "permlevel": 1
   }
  ],
  "grid_page_length": 50,
  "image_field": "logo",
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [
   {
    "group": "Staff",
@@ -110,7 +130,7 @@
    "link_fieldname": "exhibitor"
   }
  ],
- "modified": "2026-02-01 22:19:24.427515",
+ "modified": "2026-02-05 10:11:12.428917",
  "modified_by": "Administrator",
  "module": "Participants",
  "name": "Exhibitor",
@@ -126,6 +146,27 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Manager",
    "share": 1,
    "write": 1
   }

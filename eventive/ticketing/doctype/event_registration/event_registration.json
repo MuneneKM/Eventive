@@ -16,7 +16,8 @@
   "attendees",
   "section_break_jfgs",
   "total_amount",
-  "discount_amount"
+  "discount_amount",
+  "amended_from"
  ],
  "fields": [
   {
@@ -83,17 +84,28 @@
    "fieldtype": "Currency",
    "label": "Discount Amount",
    "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Event Registration",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [
   {
    "link_doctype": "Event Ticket",
    "link_fieldname": "registration"
   }
  ],
- "modified": "2026-01-31 00:47:04.047349",
+ "modified": "2026-02-05 09:55:00.320421",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Event Registration",

@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-04 12:30:30.368385",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_sppx",
+  "event",
+  "event_ticket",
+  "column_break_fyej",
+  "checkin_time",
+  "method",
+  "section_break_mpso",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_sppx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Event Check-in",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "Main Event",
+   "reqd": 1
+  },
+  {
+   "fieldname": "event_ticket",
+   "fieldtype": "Link",
+   "label": "Event Ticket",
+   "options": "Event Ticket"
+  },
+  {
+   "fieldname": "checkin_time",
+   "fieldtype": "Datetime",
+   "label": "Checkin Time"
+  },
+  {
+   "fieldname": "method",
+   "fieldtype": "Select",
+   "label": "Method",
+   "options": "QR Code\nGate Payment"
+  },
+  {
+   "fieldname": "column_break_fyej",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_mpso",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-05 10:10:08.292662",
+ "modified_by": "Administrator",
+ "module": "Ticketing",
+ "name": "Event Check-in",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Check-in Staff",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

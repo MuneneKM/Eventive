@@ -18,7 +18,8 @@
   "status",
   "issue_date",
   "section_break_jvdz",
-  "merchandise"
+  "merchandise",
+  "amended_from"
  ],
  "fields": [
   {
@@ -107,13 +108,24 @@
    "fieldtype": "Datetime",
    "label": "Issue Date",
    "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Event Ticket",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "image_field": "qr_code",
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2026-02-01 14:42:58.946614",
+ "modified": "2026-02-03 22:13:38.962595",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Event Ticket",
@@ -136,5 +148,8 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

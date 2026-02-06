@@ -87,7 +87,7 @@ def get_matches(event_id=None):
 		interests = frappe.get_all(
 			"Interest Tags",
 			filters={"parent": profile.name},
-			fields=["tag"],
+			fields=["interest"],
 			ignore_permissions=True
 		)
 		
@@ -102,7 +102,7 @@ def get_matches(event_id=None):
 			"profile_image": profile.profile_image,
 			"social_link": profile.social_link,
 			"open_to_networking": profile.open_to_networking,
-			"interests": [{"tag": i.tag} for i in interests]
+			"interests": [{"interest": i.interest} for i in interests]
 		}
 		
 		result.append({
@@ -114,7 +114,6 @@ def get_matches(event_id=None):
 		})
 	
 	return result
-
 @frappe.whitelist()
 def get_connected_matches(event_id=None):
 	"""
@@ -198,12 +197,12 @@ def get_connected_matches(event_id=None):
 			continue
 		
 		# Get interests for the matched user
-		# interests = frappe.get_all(
-		# 	"Interest Tags",
-		# 	filters={"parent": profile.name},
-		# 	fields=["interest"],
-		# 	ignore_permissions=True
-		# )
+		interests = frappe.get_all(
+			"Interest Tags",
+			filters={"parent": profile.name},
+			fields=["interest"],
+			ignore_permissions=True
+		)
 		
 		# Build nested profile object
 		nested_profile = {
@@ -216,7 +215,7 @@ def get_connected_matches(event_id=None):
 			"profile_image": profile.profile_image,
 			"social_link": profile.social_link,
 			"open_to_networking": profile.open_to_networking,
-			# "interests": [{"tag": i.interest} for i in interests]
+			"interests": [{"interest": i.interest} for i in interests]
 		}
 		
 		result.append({
@@ -232,21 +231,20 @@ def get_connected_matches(event_id=None):
 
 
 @frappe.whitelist()
-def send_message(receiver_id=None, event_id=None, message=None):
+def send_message(receiver_id=None, message=None):
 	"""
 	Send a networking message to another attendee.
 	
 	Args:
 	    receiver_id (str): User ID of the message recipient
-	    event_id (str): Event ID for the message
 	    message (str): Message content
-	
+
 	Returns:
 	    dict: Created message details
 	"""
 	if not frappe.session.user or frappe.session.user == "Guest":
 		frappe.throw("Please login to send messages", frappe.PermissionError)
-	
+
 	if not receiver_id or not message:
 		frappe.throw("Missing required fields: receiver_id and message are required")
 
@@ -289,28 +287,26 @@ def send_message(receiver_id=None, event_id=None, message=None):
 
 
 @frappe.whitelist()
-def get_messages(other_user_id=None, event_id=None):
+def get_messages(other_user_id=None):
 	"""
 	Get networking messages between current user and another user for an event.
 	
 	Args:
 	    other_user_id (str): User ID of the other participant
-	    event_id (str): Event ID to filter messages
 	
 	Returns:
 	    list: List of message dictionaries
 	"""
 	if not frappe.session.user or frappe.session.user == "Guest":
 		frappe.throw("Please login to view messages", frappe.PermissionError)
-	
-	if not other_user_id or not event_id:
-		frappe.throw("Missing required fields: other_user_id and event_id are required")
-	
+
+	if not other_user_id:
+		frappe.throw("Missing required fields: other_user_id is required")
+
 	# Get messages where current user is sender or receiver, and other_user_id is the other party
 	messages = frappe.get_all(
 		"Networking Message",
 		filters=[
-			["Networking Message", "event", "=", event_id],
 			["Networking Message", "sender", "in", [frappe.session.user, other_user_id]],
 			["Networking Message", "receiver", "in", [frappe.session.user, other_user_id]]
 		],

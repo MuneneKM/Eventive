@@ -175,3 +175,54 @@ def register(email, password, first_name=None, full_name=None, profile_image=Non
 		"email": user.email,
 		"attendee_profile_id": attendee_profile.name
 	}
+
+
+@frappe.whitelist()
+def update_profile(profile_id, interests=None, open_to_networking=None, social_link=None):
+	"""
+	Update an attendee profile with interests, networking preference, and social link.
+	
+	Args:
+	    profile_id (str): The ID of the attendee profile to update
+	    interests (list): List of interest strings to set
+	    open_to_networking (bool): Whether the attendee is open to networking
+	    social_link (str, optional): Social media link
+	
+	Returns:
+	    dict: Success message with updated profile data
+	"""
+	# Get the attendee profile
+	profile = frappe.get_doc("Attendee Profile", profile_id, ignore_permissions=True)
+	
+	# Update fields if provided
+	if open_to_networking is not None:
+		profile.open_to_networking = open_to_networking
+	
+	if social_link is not None:
+		profile.social_link = social_link
+	
+	# Handle interests - clear existing and add new ones
+	if interests is not None:
+		if isinstance(interests, str):
+			interests = frappe.parse_json(interests)
+		
+		# Clear existing interests
+		profile.interests = []
+		
+		# Add new interests
+		for interest in interests:
+			if interest:
+				profile.append("interests", {
+					"interest": interest
+				})
+	
+	# Save the profile
+	profile.save(ignore_permissions=True)
+	
+	return {
+		"message": "Profile updated successfully",
+		"profile_id": profile.name,
+		"open_to_networking": profile.open_to_networking,
+		"social_link": profile.social_link,
+		"interests": [i.interest for i in profile.interests]
+	}

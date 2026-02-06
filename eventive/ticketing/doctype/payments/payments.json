@@ -13,7 +13,8 @@
   "currency",
   "status",
   "section_break_dlps",
-  "raw_payload"
+  "raw_payload",
+  "amended_from"
  ],
  "fields": [
   {
@@ -34,6 +35,7 @@
    "description": "reference Code",
    "fieldname": "reference",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Reference",
    "reqd": 1
   },
@@ -45,6 +47,7 @@
    "default": "0",
    "fieldname": "amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Amount ",
    "options": "currency",
    "reqd": 1
@@ -59,6 +62,7 @@
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Paid\nRefunded"
   },
@@ -70,12 +74,23 @@
    "fieldname": "raw_payload",
    "fieldtype": "Long Text",
    "label": "Raw Payload"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payments",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2026-01-28 16:36:53.220349",
+ "modified": "2026-02-05 10:10:43.077010",
  "modified_by": "Administrator",
  "module": "Ticketing",
  "name": "Payments",
@@ -98,5 +113,8 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }
