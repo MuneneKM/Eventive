@@ -56,13 +56,12 @@ export function MyEvents() {
             if (Array.isArray(ticketsData)) {
               // Filter events with has_ticket true and map to Event format
               registeredEventsData = ticketsData
-                .filter((t: { has_ticket: boolean }) => t.has_ticket)
-                .map((t: { event_id: string }) => {
+                .map((t: { event: string }) => {
                   // Find the full event details from allEvents
-                  const eventDetails = allEventsData.find((e: Event) => e.name === t.event_id);
+                  const eventDetails = allEventsData.find((e: Event) => e.name === t.event);
                   return eventDetails || {
-                    name: t.event_id,
-                    event_name: t.event_id,
+                    name: t.event,
+                    event_name: t.event,
                     banner_image: '',
                     start_date: '',
                     end_date: '',

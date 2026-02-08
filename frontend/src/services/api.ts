@@ -222,7 +222,7 @@ export const ticketAPI = {
         frappeClient.get(`/eventive.api.ticket.get_ticket?email=${email}&event_id=${eventId}`),
 
     getAllMyTickets: (email: string) =>
-        frappeClient.get(`/eventive.api.ticket.get_my_tickets`),
+        frappeClient.get(`/eventive.api.ticket.get_my_tickets?email=${email}`),
 
     getByBooking: (bookingId: string) =>
         frappeClient.get(`/eventive.api.get_tickets?booking_id=${bookingId}`),

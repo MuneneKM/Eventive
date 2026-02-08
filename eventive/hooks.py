@@ -7,6 +7,7 @@ app_license = "mit"
 
 # Apps
 # ------------------
+doppio_default_path = "/dashboard"
 
 # required_apps = []
 

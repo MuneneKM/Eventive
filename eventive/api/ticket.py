@@ -292,20 +292,23 @@ def has_ticket(email, event_id):
 
 
 @frappe.whitelist()
-def get_my_tickets():
+def get_my_tickets(email=None):
 	"""
 	Fetch all tickets for the current user.
 	
 	Returns:
 	    list: List of ticket dictionaries containing ticket details
 	"""
-	if not frappe.session.user or frappe.session.user == "Guest":
+	if not email:
+		email = frappe.session.user
+
+	if not email or email == "Guest":
 		frappe.throw("Please login to view your tickets", frappe.PermissionError)
-	
+
 	tickets = frappe.get_all(
 		"Event Ticket",
 		filters={
-			"email": frappe.session.user,
+			"email": email,
 			"docstatus": 1
 		},
 		fields=[

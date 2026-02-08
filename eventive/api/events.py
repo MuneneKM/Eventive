@@ -143,7 +143,7 @@ def create_sponsor(sponsor_name, tier, event=None, company=None, company_logo=No
 	}
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_all():
 	"""
 	Fetch all published events.
