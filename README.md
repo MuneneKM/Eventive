@@ -1,7 +1,4 @@
 # Eventive
-<<<<<<< HEAD
-Event Management Platform
-=======
 
 Eventive is a comprehensive event management platform built on the [Frappe Framework](https://frappeframework.com/). It provides a complete solution for organizing, managing, and executing events of all sizes, from small meetups to large conferences and exhibitions.
 
@@ -324,4 +321,4 @@ MIT License - see LICENSE file for details.
 ## Support
 
 For issues and feature requests, please use the GitHub issue tracker.
->>>>>>> develop
+
