@@ -24,6 +24,7 @@ doppio_default_path = "/dashboard"
 
 # Includes in <head>
 # ------------------
+fixtures = ["Custom Field", "Property Setter", "Print Format", "Role", "Workflow", "Workflow State", "Workflow Action", "Virtual Doctype", "Virtual Field", "Workspace", "Workspace Link", "Client Script", "Server Script"]
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/eventive/css/eventive.css"
