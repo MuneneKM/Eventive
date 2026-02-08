@@ -44,7 +44,57 @@ Eventive is a comprehensive event management platform built on the [Frappe Frame
 - **Revenue Breakdown**: Detailed revenue analysis by ticket sales, merchandise, and sponsors
 - **Financial Performance Report**: Comprehensive financial reporting for events
 
-### API & Integrations
+## Frontend
+
+Eventive includes a modern React-based frontend for attendees and participants to interact with the platform.
+
+### Technology Stack
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first styling
+- **Frappe UI** - UI components (Shadcn-inspired)
+
+### Frontend Features
+- **Authentication**: Login and registration pages
+- **Event Discovery**: Browse and view event details
+- **Agenda**: Session scheduling and agenda views
+- **Tickets**: Browse and purchase tickets
+- **Booking**: Manage event bookings
+- **Merchandise**: Browse and purchase event merchandise
+- **Speakers**: View speaker profiles and sessions
+- **Content**: Access event digital content
+- **Networking**: Connect with other attendees
+- **Profile**: Manage attendee profiles
+- **Feedback**: Submit event feedback
+- **Sponsorship**: View and manage sponsorships
+
+### Frontend Pages
+- [`Login`](frontend/src/pages/Login.tsx) - User authentication
+- [`Register`](frontend/src/pages/Register.tsx) - New user registration
+- [`MyEvents`](frontend/src/pages/MyEvents.tsx) - View registered events
+- [`EventOverview`](frontend/src/pages/EventOverview.tsx) - Event details and information
+- [`Agenda`](frontend/src/pages/Agenda.tsx) - Event schedule and sessions
+- [`Ticket`](frontend/src/pages/Ticket.tsx) - Ticket selection and purchase
+- [`Booking`](frontend/src/pages/Booking.tsx) - Booking management
+- [`Merchandise`](frontend/src/pages/Merchandise.tsx) - Merchandise catalog
+- [`Speakers`](frontend/src/pages/Speakers.tsx) - Speaker listings
+- [`Content`](frontend/src/pages/Content.tsx) - Digital content library
+- [`Networking`](frontend/src/pages/Networking.tsx) - Attendee networking
+- [`Profile`](frontend/src/pages/Profile.tsx) - User profile management
+- [`Feedback`](frontend/src/pages/Feedback.tsx) - Event feedback submission
+- [`Sponsorship`](frontend/src/pages/Sponsorship.tsx) - Sponsorship information
+
+### Frontend Components
+- **Navigation**: [`DesktopNav`](frontend/src/components/DesktopNav.tsx), [`MobileNav`](frontend/src/components/MobileNav.tsx)
+- **Cards**: [`EventCard`](frontend/src/components/EventCard.tsx), [`SpeakerCard`](frontend/src/components/SpeakerCard.tsx), [`SessionCard`](frontend/src/components/SessionCard.tsx), [`MerchandiseCard`](frontend/src/components/MerchandiseCard.tsx), [`ContentCard`](frontend/src/components/ContentCard.tsx), [`NetworkingMatchCard`](frontend/src/components/NetworkingMatchCard.tsx)
+- **UI Components**: Button, Card, Dialog, Input, Label, Progress, Select, Switch, Tabs, Textarea, Badge
+- **Layout**: [`RootLayout`](frontend/src/layout/RootLayout.tsx), [`routes`](frontend/src/layout/routes.ts)
+- **Services**: [`api.ts`](frontend/src/services/api.ts) - API integration
+- **Context**: [`AuthContext`](frontend/src/context/AuthContext.tsx) - Authentication state
+
+## API & Integrations
+
 Eventive provides a comprehensive REST API for external integrations:
 
 - [`events`](eventive/api/events.py) - Event management endpoints
@@ -64,8 +114,10 @@ Eventive provides a comprehensive REST API for external integrations:
 - Python 3.10+
 - Frappe Framework
 - Bench CLI tool
+- Node.js 18+ (for frontend)
+- npm or yarn (for frontend)
 
-### Installation Steps
+### Backend Installation
 
 1. Clone the repository:
 ```bash
@@ -82,6 +134,45 @@ bench install-app eventive
 bench migrate
 ```
 
+### Frontend Installation
+
+The frontend is located in the `frontend/` directory.
+
+1. Navigate to the frontend directory:
+```bash
+cd frontend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Build for production:
+```bash
+npm run build
+```
+
+### Running Both Backend and Frontend
+
+For development, you'll typically run both the Frappe bench and the frontend dev server:
+
+```bash
+# Terminal 1 - Start Frappe bench
+bench start
+
+# Terminal 2 - Start frontend
+cd frontend
+npm run dev
+```
+
+The frontend will typically run on `http://localhost:5173` and proxy API requests to the Frappe bench server.
+
 ## Contributing
 
 We welcome contributions to Eventive! This project uses `pre-commit` for code quality. Please install and enable it:
@@ -92,11 +183,19 @@ pre-commit install
 ```
 
 ### Code Standards
+
 Pre-commit is configured with the following tools:
 - **ruff** - Fast Python linter
 - **eslint** - JavaScript linting
 - **prettier** - Code formatting
 - **pyupgrade** - Modern Python syntax
+
+For frontend code:
+```bash
+cd frontend
+npm run lint   # Run ESLint
+npm run format # Run Prettier
+```
 
 ## CI/CD
 
@@ -162,6 +261,57 @@ eventive/
 │       ├── event_ticket/
 │       └── event_registration/
 └── hooks.py                # App hooks and configuration
+
+frontend/                  # React frontend application
+├── public/                 # Static assets
+├── src/
+│   ├── assets/            # Images and static resources
+│   ├── components/        # React components
+│   │   ├── ui/           # Reusable UI components
+│   │   ├── ContentCard.tsx
+│   │   ├── DesktopNav.tsx
+│   │   ├── EventCard.tsx
+│   │   ├── MerchandiseCard.tsx
+│   │   ├── MessageDialog.tsx
+│   │   ├── MobileNav.tsx
+│   │   ├── NetworkingMatchCard.tsx
+│   │   ├── SessionCard.tsx
+│   │   └── SpeakerCard.tsx
+│   ├── context/          # React context providers
+│   │   └── AuthContext.tsx
+│   ├── layout/            # Layout components and routes
+│   │   ├── RootLayout.tsx
+│   │   └── routes.ts
+│   ├── pages/            # Page components
+│   │   ├── Agenda.tsx
+│   │   ├── Booking.tsx
+│   │   ├── Content.tsx
+│   │   ├── EventOverview.tsx
+│   │   ├── Feedback.tsx
+│   │   ├── Login.tsx
+│   │   ├── Merchandise.tsx
+│   │   ├── MyEvents.tsx
+│   │   ├── Networking.tsx
+│   │   ├── Profile.tsx
+│   │   ├── Register.tsx
+│   │   ├── Speakers.tsx
+│   │   ├── Sponsorship.tsx
+│   │   └── Ticket.tsx
+│   ├── services/          # API services and utilities
+│   │   ├── api.ts
+│   │   └── mockData.ts
+│   ├── App.tsx           # Main application component
+│   ├── index.css         # Global styles
+│   ├── main.tsx          # Application entry point
+│   ├── tailwind.css      # Tailwind CSS styles
+│   └── theme.css         # Theme configuration
+├── eslint.config.js       # ESLint configuration
+├── index.html            # HTML entry point
+├── package.json          # npm dependencies
+├── tsconfig.app.json     # TypeScript config for app
+├── tsconfig.json         # TypeScript base config
+├── tsconfig.node.json    # TypeScript config for Node
+└── vite.config.ts        # Vite configuration
 ```
 
 ## License
