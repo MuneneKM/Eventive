@@ -1,0 +1,281 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:EVT-{DD}-{MM}-{YY}-{####}",
+ "creation": "2026-01-28 11:47:08.868646",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "organizer",
+  "section_break_buyk",
+  "event_name",
+  "banner_image",
+  "start_date",
+  "end_date",
+  "host_name",
+  "column_break_efgp",
+  "status",
+  "capacity",
+  "venue",
+  "currency",
+  "venue_name",
+  "budget",
+  "section_break_ezpw",
+  "is_recurring",
+  "is_paid_event",
+  "allow_networking",
+  "allow_digital_content",
+  "is_published",
+  "section_break_akjj",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_recurring",
+   "fieldtype": "Check",
+   "label": "Is Recurring?"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPublished\nOngoing\nCompleted\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "venue",
+   "fieldtype": "Link",
+   "label": "Venue",
+   "options": "Venue",
+   "reqd": 1
+  },
+  {
+   "fieldname": "organizer",
+   "fieldtype": "Link",
+   "label": "Organizer",
+   "options": "Event Host",
+   "reqd": 1
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "label": "Capacity"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_paid_event",
+   "fieldtype": "Check",
+   "label": "Is Paid Event?"
+  },
+  {
+   "default": "KES",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_networking",
+   "fieldtype": "Check",
+   "label": "Allow Networking?"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_digital_content",
+   "fieldtype": "Check",
+   "label": "Allow Digital Content?"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "banner_image",
+   "fieldtype": "Attach Image",
+   "label": "Banner Image"
+  },
+  {
+   "fieldname": "section_break_buyk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_efgp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ezpw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_akjj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "event_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Event Name",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published?"
+  },
+  {
+   "fetch_from": "organizer.host_name",
+   "fieldname": "host_name",
+   "fieldtype": "Data",
+   "label": "Host Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "venue.venue_name",
+   "fieldname": "venue_name",
+   "fieldtype": "Data",
+   "label": "Venue Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "budget",
+   "fieldtype": "Currency",
+   "label": "Budget"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "banner_image",
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Sponsorship",
+   "link_doctype": "Sponsor",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Ticketing",
+   "link_doctype": "Event Ticket",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Sponsorship",
+   "link_doctype": "Sponsor Tier",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Ticketing",
+   "link_doctype": "Ticket Type",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Ticketing",
+   "link_doctype": "Ticket Category",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Program",
+   "link_doctype": "Event Session",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Content",
+   "link_doctype": "Digital Content",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Ticketing",
+   "link_doctype": "Event Registration",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Activation",
+   "link_doctype": "Exhibitor",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Activation",
+   "link_doctype": "Booth Package",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Staff",
+   "link_doctype": "Event Personnel",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Checklist",
+   "link_doctype": "Event Task",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Ticketing",
+   "link_doctype": "Discount Code",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Merchandise",
+   "link_doctype": "Merchandise",
+   "link_fieldname": "event"
+  },
+  {
+   "group": "Expenses",
+   "link_doctype": "Event Expense",
+   "link_fieldname": "event"
+  }
+ ],
+ "modified": "2026-02-05 10:09:47.816729",
+ "modified_by": "Administrator",
+ "module": "Eventive",
+ "name": "Main Event",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "event_name, start_date",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "event_name"
+}

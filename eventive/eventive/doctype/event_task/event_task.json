@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CHKLT-{#####}",
+ "creation": "2026-01-31 00:12:27.618168",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "checklist_name",
+  "event",
+  "category",
+  "column_break_vpkr",
+  "assigned_to",
+  "due",
+  "priority",
+  "section_break_irsb",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Assigned To",
+   "options": "Event Personnel",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_vpkr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "due",
+   "fieldtype": "Datetime",
+   "label": "Due"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "High\nMid\nLow"
+  },
+  {
+   "fieldname": "section_break_irsb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "checklist_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Checklist Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "label": "Event",
+   "options": "Main Event",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Pre Event\nDuring\nPost Event",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-31 00:19:23.961894",
+ "modified_by": "Administrator",
+ "module": "Eventive",
+ "name": "Event Task",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "checklist_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "checklist_name"
+}

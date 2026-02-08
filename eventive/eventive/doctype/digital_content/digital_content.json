@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:MEDIA-{event}-{#####}",
+ "creation": "2026-01-28 15:21:34.389968",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "event",
+  "session",
+  "thumbnail",
+  "column_break_tstl",
+  "content_type",
+  "file",
+  "publish_date",
+  "access_level",
+  "section_break_nbdh",
+  "content_tags",
+  "section_break_txno",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "Main Event",
+   "reqd": 1
+  },
+  {
+   "fieldname": "session",
+   "fieldtype": "Link",
+   "label": "Session",
+   "options": "Event Session"
+  },
+  {
+   "fieldname": "column_break_tstl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "content_type",
+   "fieldtype": "Select",
+   "label": "Content Type",
+   "options": "Image\nVideo\nPDF\nLink\nAudio"
+  },
+  {
+   "fieldname": "file",
+   "fieldtype": "Attach",
+   "label": "File"
+  },
+  {
+   "fieldname": "publish_date",
+   "fieldtype": "Datetime",
+   "label": "Publish Date"
+  },
+  {
+   "default": "All",
+   "fieldname": "access_level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Access Level",
+   "options": "All\nViP",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_txno",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_nbdh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "content_tags",
+   "fieldtype": "Table",
+   "label": "Content Tags",
+   "options": "Content Tag"
+  },
+  {
+   "fieldname": "thumbnail",
+   "fieldtype": "Attach Image",
+   "label": "Thumbnail"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "thumbnail",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-02 00:19:24.987193",
+ "modified_by": "Administrator",
+ "module": "Eventive",
+ "name": "Digital Content",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

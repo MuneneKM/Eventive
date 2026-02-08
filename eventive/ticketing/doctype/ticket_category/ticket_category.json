@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:TIK-CAT-{####}",
+ "creation": "2026-01-28 12:35:53.821461",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ticket_name",
+  "ticket_category",
+  "event",
+  "column_break_zdvo",
+  "ticket_price",
+  "max_ticket_quantity",
+  "currency"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "description": "give the ticket name linked to the event",
+   "fieldname": "ticket_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ticket Name",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "description": "such as VIP, Early Bird",
+   "fieldname": "ticket_category",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ticket Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zdvo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "0",
+   "description": "if event is free leave 0",
+   "fieldname": "ticket_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Ticket Price",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "max_ticket_quantity",
+   "fieldtype": "Int",
+   "label": "Max Ticket Quantity"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "label": "Event",
+   "options": "Main Event",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-30 12:29:46.432701",
+ "modified_by": "Administrator",
+ "module": "Ticketing",
+ "name": "Ticket Category",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "ticket_name, ticket_price",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "ticket_name"
+}

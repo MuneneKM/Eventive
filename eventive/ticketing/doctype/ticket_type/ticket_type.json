@@ -1,0 +1,114 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:TKT-{event_name}-{ticket_category_name}-{####}",
+ "creation": "2026-01-28 12:20:49.465904",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event",
+  "ticket_category",
+  "ticket_price",
+  "event_name",
+  "ticket_category_name",
+  "column_break_fryv",
+  "sales_start",
+  "sales_end",
+  "section_break_jpdt",
+  "access_level"
+ ],
+ "fields": [
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "Main Event",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ticket_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Ticket Category",
+   "options": "Ticket Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_fryv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_start",
+   "fieldtype": "Datetime",
+   "label": "Sales Start"
+  },
+  {
+   "fieldname": "sales_end",
+   "fieldtype": "Datetime",
+   "label": "Sales End"
+  },
+  {
+   "fieldname": "section_break_jpdt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "access_level",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Access Level",
+   "options": "VVIP\nVIP\nStandard",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "ticket_category.ticket_price",
+   "fieldname": "ticket_price",
+   "fieldtype": "Currency",
+   "label": "Ticket Price",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "event.event_name",
+   "fieldname": "event_name",
+   "fieldtype": "Data",
+   "label": "Event Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "ticket_category.ticket_category",
+   "fieldname": "ticket_category_name",
+   "fieldtype": "Data",
+   "label": "Ticket Category Name",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-31 11:42:43.228364",
+ "modified_by": "Administrator",
+ "module": "Ticketing",
+ "name": "Ticket Type",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,29 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-02-05 08:02:32.351324",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-02-05 08:06:30.086006",
+ "modified_by": "Administrator",
+ "module": "Eventive",
+ "name": "Ticket & Check-in Rate",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\n e.event_name AS event,\n COUNT(r.name) AS registered,\n SUM(CASE WHEN c.name IS NOT NULL THEN 1 ELSE 0 END) AS checked_in,\n (SUM(CASE WHEN c.name IS NOT NULL THEN 1 ELSE 0 END)/ COUNT(r.name)) * 100 AS check_in_rate\nFROM `tabMain Event` e\nLEFT JOIN `tabEvent Ticket` r ON r.event = e.name\nLEFT JOIN `tabEvent Check-in` c ON c.event_ticket = r.name\nGROUP BY e.name",
+ "ref_doctype": "Event Ticket",
+ "report_name": "Ticket & Check-in Rate",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

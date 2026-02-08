@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SPR-{event}-{#####}",
+ "creation": "2026-01-28 15:11:35.591865",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "sponsor_name",
+  "tier",
+  "event",
+  "column_break_dexy",
+  "company",
+  "company_logo",
+  "is_approved",
+  "section_break_uhys",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "sponsor_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sponsor Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tier",
+   "options": "Sponsor Tier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_dexy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "company_logo",
+   "fieldtype": "Attach Image",
+   "label": "Company Logo"
+  },
+  {
+   "fetch_from": "tier.event",
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "label": "Event",
+   "options": "Main Event",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sponsor",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_approved",
+   "fieldtype": "Check",
+   "label": "is Approved?",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_uhys",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "company_logo",
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-05 10:05:06.959757",
+ "modified_by": "Administrator",
+ "module": "Participants",
+ "name": "Sponsor",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "sponsor_name, event",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "sponsor_name"
+}

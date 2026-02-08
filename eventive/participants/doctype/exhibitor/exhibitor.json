@@ -1,0 +1,182 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:EXH-{####}",
+ "creation": "2026-01-30 23:23:02.959475",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "exhibitor_name",
+  "email",
+  "phone",
+  "logo",
+  "column_break_hqgh",
+  "website",
+  "event",
+  "status",
+  "event_name",
+  "section_break_qqog",
+  "booth_package",
+  "is_approved",
+  "section_break_mhxn",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "exhibitor_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Exhibitor Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo"
+  },
+  {
+   "fieldname": "column_break_hqgh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "Main Event",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nConfirmed\nChecked in\nCancelled"
+  },
+  {
+   "fetch_from": "event.event_name",
+   "fieldname": "event_name",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Event Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mhxn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "section_break_qqog",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "booth_package",
+   "fieldtype": "Link",
+   "label": "Booth Package",
+   "options": "Booth Package",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Exhibitor",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_approved",
+   "fieldtype": "Check",
+   "label": "Is Approved?",
+   "permlevel": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "logo",
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Staff",
+   "link_doctype": "Exhibitor Staff",
+   "link_fieldname": "exhibitor"
+  }
+ ],
+ "modified": "2026-02-05 10:11:12.428917",
+ "modified_by": "Administrator",
+ "module": "Participants",
+ "name": "Exhibitor",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "exhibitor_name, event_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "exhibitor_name"
+}

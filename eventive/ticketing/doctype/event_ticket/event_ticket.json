@@ -1,0 +1,155 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-28 14:07:29.243057",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "check_in_status_column",
+  "registration",
+  "event",
+  "qr_code",
+  "email",
+  "column_break_cahn",
+  "ticket_type",
+  "attendee_name",
+  "checked_in",
+  "checked_in_by",
+  "status",
+  "issue_date",
+  "section_break_jvdz",
+  "merchandise",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "registration",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Registration",
+   "options": "Event Registration",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "registration.event",
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "Main Event",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "check_in_status_column",
+   "fieldtype": "Column Break",
+   "label": "Check In Status",
+   "options": "Day One\nDay two"
+  },
+  {
+   "description": "backend",
+   "fieldname": "qr_code",
+   "fieldtype": "Attach Image",
+   "label": "QR Code"
+  },
+  {
+   "fieldname": "column_break_cahn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Populate from backend",
+   "fieldname": "ticket_type",
+   "fieldtype": "Link",
+   "label": "Ticket Type",
+   "options": "Ticket Type"
+  },
+  {
+   "description": "populate from the script",
+   "fieldname": "attendee_name",
+   "fieldtype": "Data",
+   "label": "Attendee Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "checked_in",
+   "fieldtype": "Check",
+   "label": "Checked In"
+  },
+  {
+   "fieldname": "section_break_jvdz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "merchandise",
+   "fieldtype": "Table",
+   "label": "Merchandise",
+   "options": "Event Ticket Merchandise"
+  },
+  {
+   "fieldname": "checked_in_by",
+   "fieldtype": "Link",
+   "label": "Checked In By",
+   "options": "User"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Valid\nInvalid"
+  },
+  {
+   "default": "Today",
+   "fieldname": "issue_date",
+   "fieldtype": "Datetime",
+   "label": "Issue Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Event Ticket",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "qr_code",
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-03 22:13:38.962595",
+ "modified_by": "Administrator",
+ "module": "Ticketing",
+ "name": "Event Ticket",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:BOOKED-{session_title}-{#####}",
+ "creation": "2026-01-28 15:57:24.081688",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event_session",
+  "session_title",
+  "column_break_eupf",
+  "start_time",
+  "end_time",
+  "attendance_status"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "event_session",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event Session",
+   "options": "Event Session",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "event_session.title",
+   "fieldname": "session_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Session Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_eupf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "event_session.start_time",
+   "fieldname": "start_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Start Time",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "event_session.end_time",
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "End Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "attendance_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Attendance Status",
+   "options": "Booked\nAttended\nNo Show"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-01-28 16:05:50.114660",
+ "modified_by": "Administrator",
+ "module": "Personalized",
+ "name": "Booked Session Item",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "session_title"
+}

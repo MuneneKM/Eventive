@@ -1,0 +1,122 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SPK-{####}",
+ "creation": "2026-01-28 16:08:00.899082",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "display_name",
+  "display_profile",
+  "column_break_heas",
+  "event",
+  "is_featured",
+  "section_break_tcds",
+  "company",
+  "designation",
+  "section_break_yjsu",
+  "social_media_links"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "User",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "display_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Display Name",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "Main Event",
+   "reqd": 1
+  },
+  {
+   "fieldname": "display_profile",
+   "fieldtype": "Attach Image",
+   "label": "Display Profile"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "0",
+   "fieldname": "is_featured",
+   "fieldtype": "Check",
+   "label": "Is Featured?"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "column_break_heas",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_tcds",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_yjsu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "social_media_links",
+   "fieldtype": "Table",
+   "label": "Social Media Links",
+   "options": "Social Media Links"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "display_profile",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-30 19:22:45.824223",
+ "modified_by": "Administrator",
+ "module": "Participants",
+ "name": "Speaker Profile",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "display_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "display_name"
+}

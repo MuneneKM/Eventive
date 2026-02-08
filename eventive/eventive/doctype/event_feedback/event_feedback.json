@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-04 12:26:58.042643",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event",
+  "rating",
+  "venue",
+  "column_break_nenp",
+  "overall_experience",
+  "content_quality",
+  "organization",
+  "section_break_zwog",
+  "comment"
+ ],
+ "fields": [
+  {
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event",
+   "options": "Main Event",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating"
+  },
+  {
+   "fieldname": "venue",
+   "fieldtype": "Rating",
+   "label": "Venue"
+  },
+  {
+   "fieldname": "column_break_nenp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "overall_experience",
+   "fieldtype": "Rating",
+   "label": "Overall Experience"
+  },
+  {
+   "fieldname": "content_quality",
+   "fieldtype": "Rating",
+   "label": "Content Quality"
+  },
+  {
+   "fieldname": "organization",
+   "fieldtype": "Rating",
+   "label": "Organization"
+  },
+  {
+   "fieldname": "section_break_zwog",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comment",
+   "fieldtype": "Small Text",
+   "label": "Comment"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-04 12:29:48.158248",
+ "modified_by": "Administrator",
+ "module": "Eventive",
+ "name": "Event Feedback",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
