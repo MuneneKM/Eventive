@@ -1,0 +1,96 @@
+services:
+  mariadb:
+    image: mariadb:10.11
+    container_name: eventive-mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - eventive-network
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "--password=root"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis-cache:
+    image: redis:alpine
+    container_name: eventive-redis-cache
+    restart: unless-stopped
+    networks:
+      - eventive-network
+
+  redis-queue:
+    image: redis:alpine
+    container_name: eventive-redis-queue
+    restart: unless-stopped
+    networks:
+      - eventive-network
+
+  frappe:
+    image: frappe/erpnext:v15
+    container_name: eventive-frappe
+    restart: unless-stopped
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis-cache:
+        condition: service_started
+      redis-queue:
+        condition: service_started
+    environment:
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      REDIS_CACHE: redis-cache:6379
+      REDIS_QUEUE: redis-queue:6379
+      SITE_NAME: eventive.localhost
+      ADMIN_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - sites:/home/frappe/frappe-bench/sites
+      - logs:/home/frappe/frappe-bench/logs
+      - ./eventive:/home/frappe/frappe-bench/apps/eventive:ro
+    networks:
+      - eventive-network
+    command: >
+      bash -c "
+      if [ ! -d sites/eventive.localhost ]; then
+        echo 'Creating site eventive.localhost';
+        bench new-site eventive.localhost
+          --admin-password admin
+          --db-root-password root
+          --no-mariadb-socket;
+        bench use eventive.localhost;
+      fi;
+      bench start
+      "
+
+  nginx:
+    image: nginx:alpine
+    container_name: eventive-nginx
+    restart: unless-stopped
+    ports:
+      - '8080:80'
+    depends_on:
+      - frappe
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - eventive-network
+
+volumes:
+  mariadb_data:
+  redis_cache_data:
+  redis_queue_data:
+  sites:
+  logs:
+
+networks:
+  eventive-network:
+    driver: bridge

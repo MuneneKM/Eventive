@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router';
-import { RootLayout } from './RootLayout';
-import { MyEvents } from '../pages/MyEvents';
+import { ProtectedRootLayout } from './ProtectedRootLayout';
+import { PublicLayout } from '../components/RouteWrappers';
+import { Home } from '../pages/Home';
 import { EventOverview } from '../pages/EventOverview';
 import { Agenda } from '../pages/Agenda';
 import { Speakers } from '../pages/Speakers';
@@ -14,13 +15,38 @@ import { Ticket } from '../pages/Ticket';
 import { Register } from '../pages/Register';
 import { Login } from '../pages/Login';
 import { Sponsorship } from '../pages/Sponsorship';
+import { NotFound } from '../pages/NotFound';
 
 export const router = createBrowserRouter([
+  // Public routes (accessible by anyone)
+  {
+    path: '/',
+    Component: PublicLayout,
+    children: [
+      { index: true, Component: Home },
+    ],
+  },
+  {
+    path: '/login',
+    Component: PublicLayout,
+    children: [
+      { index: true, Component: Login },
+    ],
+  },
+  {
+    path: '/register',
+    Component: PublicLayout,
+    children: [
+      { index: true, Component: Register },
+    ],
+  },
+
+  // Protected routes (require authentication)
   {
     path: '/dashboard',
-    Component: RootLayout,
+    Component: ProtectedRootLayout,
     children: [
-      { index: true, Component: MyEvents },
+      { index: true, Component: Home },
       { path: 'event/:eventId', Component: EventOverview },
       { path: 'event/:eventId/feedback', Component: Feedback },
       { path: 'event/:eventId/book', Component: Booking },
@@ -34,6 +60,10 @@ export const router = createBrowserRouter([
       { path: 'profile', Component: Profile },
     ],
   },
-  { path: '/register', Component: Register },
-  { path: '/login', Component: Login },
+
+  // 404 Not Found
+  {
+    path: '*',
+    Component: NotFound,
+  },
 ]);
